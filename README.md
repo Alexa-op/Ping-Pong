@@ -1,8 +1,8 @@
 # Ping-Pong
 # Main essence
-Default Ping-Pong
-This game is about Table Tennis
-This game for two ppl but not for Online
+Default Ping-Pong.
+This game is about Table Tennis.
+This game for two ppl but not for Online.
 # Control
 Left player:
 * w - up
