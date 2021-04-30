@@ -1,12 +1,12 @@
 # Ping-Pong
-#Main essence
+# Main essence
 Default Ping-Pong
 This game is about Table Tennis
 This game for two ppl but not for Online
-#Control
+# Control
 Left player:
-*w - up
-*s - down
+* w - up
+* s - down
 Right player:
-*UP - up
-*DOWN - down
+* UP - up
+* DOWN - down
