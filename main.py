@@ -7,6 +7,11 @@ w = 700
 speed_x = 3
 speed_y = 3
 
+font.init()
+font1 = font.Font(None, 50)
+win1 = font1.render("Red win!", True, (255, 51, 51))
+win2 = font1.render("Black win!", True, (64, 64, 64))
+
 class GameSprite(sprite.Sprite):
     def __init__(self, player_image, player_x, player_y, player_speed, size_x, size_y):
         super().__init__()
@@ -18,6 +23,10 @@ class GameSprite(sprite.Sprite):
         self.rect.y = player_y
     def reset(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
+    #def rot_center(self):
+        #self.image = transform.rotate(self.image, 15)
+        #self.rect = self.image.get_rect(center = self.rect.center)
+        #return self.image, self.rect
 
 class Player(GameSprite):
     def update_l(self):
@@ -51,8 +60,12 @@ while game == True:
             game = False
 
     if not finish:
+
+        
+
         ball.rect.x += speed_x
         ball.rect.y += speed_y
+        
 
         if ball.rect.y > h-50 or ball.rect.y < 0:
             speed_y *= -1
@@ -69,6 +82,15 @@ while game == True:
 
         rk1.update_l()
         rk2.update_r()
+
+        if ball.rect.x < 0:
+            finish = True
+            window.blit(win2, (h - 200, w/2))
+        elif ball.rect.x > w:
+            finish = True
+            window.blit(win1, (h - 200, w/2))
+        
+        #ball.rot_center()
 
         display.update()
 
